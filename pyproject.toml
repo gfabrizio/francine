@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "francine"
+version = "0.1.0"
+description = "A simple terminal to-do list"
+authors = ["Guilherme Fabrizio <gfabricio@gmail.com>"]
+license = "GNU"
+readme = "README.md"
+
+[tool.poetry.scripts]
+francine = "cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+click = "^8.1.7"
+tinydb = "^4.8.0"
+platformdirs = "^4.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+ipdb = "^0.13.13"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
