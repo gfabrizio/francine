@@ -26,9 +26,9 @@ jobs:
         poetry install --no-root
     - name: Run Tests
       run: |
-        poetry run pytest francine/tests
+        poetry run pytest tests/
 
-  lint:
+  flake8-lint:
     runs-on: ubuntu-latest
     name: Lint
     steps:
