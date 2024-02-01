@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class BaseRepostitory(ABC):
     @abstractmethod
     def add(self, obj: object):
