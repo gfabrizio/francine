@@ -1,20 +1,23 @@
 import click
 
-from francine.services.task import TaskService
 from francine.repositories.tinydb import TinyDBRepository
+from francine.services.task import TaskService
 
 repository = TinyDBRepository()
 service = TaskService(repository)
+
 
 @click.group()
 def cli():
     pass
 
+
 @click.command()
-@click.argument('description')
+@click.argument("description")
 def add(description):
     service.add(description)
     click.echo(f"Task added: {description}")
+
 
 @click.command()
 def list():
@@ -22,15 +25,18 @@ def list():
     for number, task in enumerate(tasks):
         click.echo(f"{number} - {task.description}")
 
+
 @click.command()
 def complete():
     service.complete()
     click.echo("Task completed")
 
+
 @click.command()
 def flush():
     service.flush()
     click.echo("Old tasks flushed")
+
 
 cli.add_command(add)
 cli.add_command(list)

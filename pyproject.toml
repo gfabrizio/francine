@@ -19,6 +19,7 @@ platformdirs = "^4.1.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
 ipdb = "^0.13.13"
+pre-commit = "^3.6.0"
 
 [build-system]
 requires = ["poetry-core"]

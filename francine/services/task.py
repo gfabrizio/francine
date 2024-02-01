@@ -1,5 +1,6 @@
-from francine.repositories.tinydb import TinyDBRepository
 from francine.models.task import Task
+from francine.repositories.tinydb import TinyDBRepository
+
 
 class TaskService:
     def __init__(self, repository: TinyDBRepository):
