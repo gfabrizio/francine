@@ -1,4 +1,4 @@
-name: Django CI
+name: Francine CI
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
       run: |
         poetry run pytest francine/tests
 
-  flake8-lint:
+  lint:
     runs-on: ubuntu-latest
     name: Lint
     steps:
@@ -40,3 +40,6 @@ jobs:
           python-version: "3.12"
       - name: flake8 Lint
         uses: py-actions/flake8@v2
+        with:
+          ignore: "E501"
+          plugins: "flake8-bugbear==22.1.11 flake8-black"
