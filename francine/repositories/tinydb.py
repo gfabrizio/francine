@@ -26,10 +26,8 @@ class TinyDBRepository(BaseRepostitory):
         ]
 
     def get(self):
-        return [
-            Task(item["description"], datetime.fromisoformat(item["timestamp"]))
-            for item in [self.db.all()[0]]
-        ]
+        item = self.db.all()[0]
+        return Task(item["description"], datetime.fromisoformat(item["timestamp"]))
 
     def remove(self):
         doc_id = self.db.all()[0].doc_id

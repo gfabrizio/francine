@@ -10,6 +10,9 @@ class TaskService:
         task = Task(description)
         self.repository.add(task)
 
+    def get(self):
+        return self.repository.get()
+
     def list(self):
         return self.repository.list()
 
