@@ -21,7 +21,7 @@ def test_add_task(repository):
 def test_get_task(repository):
     task = Task("Test Get")
     repository.add(task)
-    assert len(repository.get()) == 1
+    assert repository.get().description == "Test Get"
 
 
 def test_flush_old_tasks(repository):
